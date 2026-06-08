@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 23:53:25 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/05 00:00:20 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/08 18:28:12 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include "mlx.h"
 
 typedef struct s_data
-{
-
+{	
+	int	size_x;
+	int	size_y;
 }	t_data;
+
 
 #endif
