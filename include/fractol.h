@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 23:53:25 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/08 18:28:12 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/10 16:01:09 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 # include "libft.h"
 # include "mlx.h"
 
-typedef struct s_data
+typedef struct s_fractol
 {	
 	int	size_x;
 	int	size_y;
-}	t_data;
+}	t_fractol;
+
+int	ft_isdouble(const char *str);
+int	valid_args(int argc, char **argv);
 
 
 #endif
