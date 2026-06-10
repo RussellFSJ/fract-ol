@@ -6,11 +6,14 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:54:47 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/10 16:08:19 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/10 16:22:40 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+static int	is_mandelbrot(char *str);
+static int	is_julia(char *str);
 
 int	valid_args(int argc, char **argv)
 {
@@ -20,7 +23,7 @@ int	valid_args(int argc, char **argv)
 	{
 		if (!ft_isdouble(argv[2]) || !ft_isdouble(argv[3]))
 		{
-			ft_printf("Invalid Re/Im values. Usage: ./fractol julia <Re> <Im>");
+			ft_printf("Re/Im are doubles. Usage: ./fractol julia <Re> <Im>\n");
 			return(0);
 		}
 		return (1);
