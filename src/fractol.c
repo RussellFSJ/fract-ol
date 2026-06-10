@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
@@ -12,23 +12,31 @@
 
 #include "fractol.h"
 
-void	fractol(int size_x, int size_y, char *title)
+void	fractol(char **argv)
 {
-	void	*mlx;
-	void	*window;
+	t_fractol	*f;
 
-	mlx = mlx_init();
-	if (!mlx)
+	f = malloc(sizeof(t_fractol));
+	if (!f)
+		return ;
+	f->type = argv[1];
+	f->mlx = mlx_init();
+	if (!f->mlx)
 	{
 		ft_printf("Failed to connect to graphical system.");
 		return ;
 	}
-	window = mlx_new_window(mlx, size_x, size_y, title);
-	if (!window)
+	f->window = mlx_new_window(f->mlx, WIDTH, HEIGHT, f->type);
+	if (!f->window)
 	{
 		ft_printf("Failed to create mlx window.");
 		return ;
 	}
-	mlx_loop(mlx);
+	if (is_mandelbrot(f->type))
+		mandelbrot(f, argv);
+	else
+		julia(f, argv);
+	mlx_loop(f->mlx);
+	free(f);
 	return ;
 }

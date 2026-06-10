@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_julia.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 23:58:45 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/10 16:31:31 by rfoo             ###   ########.fr       */
+/*   Created: 2026/06/10 21:11:34 by rfoo              #+#    #+#             */
+/*   Updated: 2026/06/10 21:12:14 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(int argc, char **argv)
+int	is_julia(char *str)
 {
-	if (!valid_args(argc, argv))
-		return (EXIT_FAILURE);
-	fractol(argv);
-	ft_printf("success\n");
-	return (EXIT_SUCCESS);
+	return (!ft_strncmp(str, "julia", 5));
 }

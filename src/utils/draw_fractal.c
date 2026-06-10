@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   draw_fractal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 23:58:45 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/10 16:31:31 by rfoo             ###   ########.fr       */
+/*   Created: 2026/06/10 13:55:57 by rfoo              #+#    #+#             */
+/*   Updated: 2026/06/10 16:15:47 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+// #include "fractol.h"
 
-int	main(int argc, char **argv)
-{
-	if (!valid_args(argc, argv))
-		return (EXIT_FAILURE);
-	fractol(argv);
-	ft_printf("success\n");
-	return (EXIT_SUCCESS);
-}
+// void	draw_fractal(t_fractol f)
+// {
+// 	return;
+// }

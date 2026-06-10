@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 23:58:45 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/10 16:31:31 by rfoo             ###   ########.fr       */
+/*   Created: 2026/06/10 23:11:56 by rfoo              #+#    #+#             */
+/*   Updated: 2026/06/11 00:10:08 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(int argc, char **argv)
+static void mandelbrot_init(t_fractol *f);
+
+void	mandelbrot(t_fractol *f, char **argv)
 {
-	if (!valid_args(argc, argv))
-		return (EXIT_FAILURE);
-	fractol(argv);
-	ft_printf("success\n");
-	return (EXIT_SUCCESS);
+	mandelbrot_init(f);
+	
+}
+
+static void mandelbrot_init(t_fractol *f)
+{
+	
 }
