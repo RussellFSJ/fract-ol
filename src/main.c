@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 23:58:45 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/10 16:31:31 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/11 22:16:56 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@ int	main(int argc, char **argv)
 	if (!valid_args(argc, argv))
 		return (EXIT_FAILURE);
 	fractol(argv);
-	ft_printf("success\n");
 	return (EXIT_SUCCESS);
 }

@@ -12,31 +12,52 @@
 
 #include "fractol.h"
 
+static void	handle_error(t_fractol *f, char *err_msg);
+static void handle_cleanup(t_fractol *f);
+
 void	fractol(char **argv)
 {
 	t_fractol	*f;
 
 	f = malloc(sizeof(t_fractol));
 	if (!f)
-		return ;
+		handle_error(NULL, "Failed to allocate memory for t_fractol.\n");
 	f->type = argv[1];
 	f->mlx = mlx_init();
 	if (!f->mlx)
-	{
-		ft_printf("Failed to connect to graphical system.");
-		return ;
-	}
+		handle_error(f, "Failed to connect to graphical system.\n");
 	f->window = mlx_new_window(f->mlx, WIDTH, HEIGHT, f->type);
 	if (!f->window)
-	{
-		ft_printf("Failed to create mlx window.");
-		return ;
-	}
+		handle_error(f, "Failed to create mlx window.\n");
+	f->image = mlx_new_image(f->mlx, WIDTH, HEIGHT);
+	if (!f->image)
+		handle_error(f, "Failed to create image.\n");
+	f->address = mlx_get_data_addr(f->image, &f->bpp, &f->line_len, &f->endian);
+	if (!f->address)
+		handle_error(f, "Failed to get image address.\n");
 	if (is_mandelbrot(f->type))
 		mandelbrot(f, argv);
 	else
 		julia(f, argv);
 	mlx_loop(f->mlx);
-	free(f);
-	return ;
+	handle_cleanup(f);
+}
+
+static void	handle_error(t_fractol *f, char *err_msg)
+{
+	handle_cleanup(f);
+	ft_printf(err_msg);
+	exit(EXIT_FAILURE);
+}
+
+static void handle_cleanup(t_fractol *f)
+{
+	if (f)
+	{
+		if (f->image)
+			mlx_destroy_image(f->mlx, f->image);
+		if (f->window)
+			mlx_destroy_window(f->mlx, f->window);
+		free(f);
+	}
 }
