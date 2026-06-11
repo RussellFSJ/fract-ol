@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   draw_fractal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/10 12:28:20 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/12 00:13:35 by rfoo             ###   ########.fr       */
+/*   Created: 2026/06/11 23:33:37 by rfoo              #+#    #+#             */
+/*   Updated: 2026/06/11 23:52:23 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	julia_init(t_fractol *f);
-
-void	julia(t_fractol *f, char **argv)
+void	draw_fractal(t_fractol *f)
 {
-	julia_init(f);
-	draw_fractal(f);
-}
+	int	y;
+	int	x;
+	int	iterations;
+	int	colour;
 
-static void	julia_init(t_fractol *f)
-{
-	f->zoom = 1.0;
-	f->move_x = 0.0;
-	f->move_y = 0.0;
-	f->c_re = 0.0;
-	f->c_im = 0.0;
+	y = 0;
+	while (y < HEIGHT)
+	{
+		x = 0;
+		while (x < WIDTH)
+		{
+			iterations = get_iterations(f, x, y);
+			if (iterations == MAX_ITER)
+				colour = 0x000000;
+			else
+				colour = (int)((double)iterations / MAX_ITER * 0xFFFFFF);
+			put_pixel(f, x, y, colour);
+			x++;
+		}
+		y++;
+	}
 }
-
