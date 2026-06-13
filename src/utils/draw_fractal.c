@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 23:33:37 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/11 23:52:23 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/13 21:44:23 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ void	draw_fractal(t_fractol *f)
 		}
 		y++;
 	}
+	mlx_put_image_to_window(f->mlx, f->window, f->image, 0, 0);
 }

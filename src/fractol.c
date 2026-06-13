@@ -13,7 +13,6 @@
 #include "fractol.h"
 
 static void	handle_error(t_fractol *f, char *err_msg);
-static void handle_cleanup(t_fractol *f);
 
 void	fractol(char **argv)
 {
@@ -35,12 +34,12 @@ void	fractol(char **argv)
 	f->address = mlx_get_data_addr(f->image, &f->bpp, &f->line_len, &f->endian);
 	if (!f->address)
 		handle_error(f, "Failed to get image address.\n");
+	add_event_hooks(f);
 	if (is_mandelbrot(f->type))
-		mandelbrot(f, argv);
+		mandelbrot(f);
 	else
 		julia(f, argv);
 	mlx_loop(f->mlx);
-	handle_cleanup(f);
 }
 
 static void	handle_error(t_fractol *f, char *err_msg)
@@ -48,16 +47,4 @@ static void	handle_error(t_fractol *f, char *err_msg)
 	handle_cleanup(f);
 	ft_printf(err_msg);
 	exit(EXIT_FAILURE);
-}
-
-static void handle_cleanup(t_fractol *f)
-{
-	if (f)
-	{
-		if (f->image)
-			mlx_destroy_image(f->mlx, f->image);
-		if (f->window)
-			mlx_destroy_window(f->mlx, f->window);
-		free(f);
-	}
 }

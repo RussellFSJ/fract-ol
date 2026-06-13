@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_pixel.c                                        :+:      :+:    :+:   */
+/*   handle_cleanup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 21:13:49 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/13 21:16:00 by rfoo             ###   ########.fr       */
+/*   Created: 2026/06/13 20:47:00 by rfoo              #+#    #+#             */
+/*   Updated: 2026/06/13 20:47:26 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	put_pixel(t_fractol *f, int x, int y, int colour)
+void handle_cleanup(t_fractol *f)
 {
-	char	*dest;
-
-	if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT)
-		return ;
-	if (!f ||  !f->address)
-		return ;
-	dest = f->address + (y * f->line_len + x * (f->bpp / 8));
-	*(unsigned int*)dest = colour;
+	if (f)
+	{
+		if (f->image)
+			mlx_destroy_image(f->mlx, f->image);
+		if (f->window)
+			mlx_destroy_window(f->mlx, f->window);
+		free(f);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 23:11:56 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/11 23:37:43 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/13 19:14:38 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	mandelbrot_init(t_fractol *f);
 
-void	mandelbrot(t_fractol *f, char **argv)
+void	mandelbrot(t_fractol *f)
 {
 	mandelbrot_init(f);
 	draw_fractal(f);
