@@ -25,7 +25,7 @@ $(MLX):
 	@$(MAKE) -C $(MLX_DIR)
 
 $(NAME): $(OBJ_FILES)
-	$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME) \
+	$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) \
 		-L$(MLX_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz \
 		-o $(NAME)
 
