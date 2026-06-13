@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 23:53:25 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/13 23:12:57 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/14 00:05:57 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		get_colour(int iterations);
 int		get_julia_iterations(t_fractol *f, int x, int y);
 int		get_mandelbrot_iterations(t_fractol *f, int x, int y);
 void	handle_cleanup(t_fractol *f);
+int		handle_mouse_event(int button, int x, int y, t_fractol *f);
 int		is_julia(char *str);
 int		is_mandelbrot(char *str);
 void	put_pixel(t_fractol *f, int x, int y, int colour);

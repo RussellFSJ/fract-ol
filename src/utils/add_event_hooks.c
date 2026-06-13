@@ -6,19 +6,20 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 20:45:49 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/13 21:06:14 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/14 00:06:08 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int handle_exit(t_fractol *f);
+static int	handle_exit(t_fractol *f);
 static int	handle_key(int key, t_fractol *f);
 
 void	add_event_hooks(t_fractol *f)
 {
 	mlx_hook(f->window, 17, 0, handle_exit, f);
 	mlx_key_hook(f->window, handle_key, f);
+	mlx_mouse_hook(f->window, handle_mouse_event, f);
 }
 
 static int	handle_exit(t_fractol *f)
