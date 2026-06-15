@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 23:53:25 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/15 14:15:46 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 16:15:41 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@
 # define HEIGHT 500
 # define MAX_ITER 100
 # define PI 3.14159265358979323846
+# define ZOOM 1.1
+
 typedef struct s_fractol
-{	
+{
 	char	*type;
 	void	*mlx;
 	void	*window;
