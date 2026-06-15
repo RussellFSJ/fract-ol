@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 20:45:49 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/14 00:06:08 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 15:11:01 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static int	handle_exit(t_fractol *f)
 {
 	handle_cleanup(f);
 	exit(EXIT_SUCCESS);
-	return(0);
+	return (0);
 }
 
 static int	handle_key(int key, t_fractol *f)
 {
 	if (key == 65307)
-		return handle_exit(f);
+		return (handle_exit(f));
 	return (0);
 }

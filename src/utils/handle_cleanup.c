@@ -6,15 +6,14 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 20:47:00 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/15 13:44:37 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 14:34:14 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void handle_cleanup(t_fractol *f)
+void	handle_cleanup(t_fractol *f)
 {
-	ft_printf("cleaning\n");
 	if (f)
 	{
 		if (f->image)

@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 19:53:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/13 20:26:42 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 15:05:11 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ double	ft_atof(const char *nptr)
 		nptr++;
 		while (ft_isdigit(*nptr))
 		{
-			fraction = fraction * 10.0 + (*nptr -'0');
+			fraction = fraction * 10.0 + (*nptr - '0');
 			divisor *= 10;
 			nptr++;
 		}

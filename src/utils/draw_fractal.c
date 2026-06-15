@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 23:33:37 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/13 22:54:40 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 15:00:37 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	draw_fractal(t_fractol *f)
 			if (is_mandelbrot(f->type))
 				iterations = get_mandelbrot_iterations(f, x, y);
 			else
-				iterations = get_julia_iterations(f, x, y);	
+				iterations = get_julia_iterations(f, x, y);
 			colour = get_colour(iterations);
 			put_pixel(f, x, y, colour);
 			x++;
