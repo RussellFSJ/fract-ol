@@ -14,14 +14,8 @@
 
 static void	handle_error(t_fractol *f, char *err_msg);
 
-void	fractol(char **argv)
+void	fractol(t_fractol *f, char **argv)
 {
-	t_fractol	*f;
-
-	f = malloc(sizeof(t_fractol));
-	if (!f)
-		handle_error(NULL, "Failed to allocate memory for t_fractol.\n");
-	f->type = argv[1];
 	f->mlx = mlx_init();
 	if (!f->mlx)
 		handle_error(f, "Failed to connect to graphical system.\n");

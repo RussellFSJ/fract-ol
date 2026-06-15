@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 23:53:25 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/14 00:05:57 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 14:15:46 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "libft.h"
 # include "mlx.h"
 
-# define WIDTH 800
-# define HEIGHT 600
+# define WIDTH 500
+# define HEIGHT 500
 # define MAX_ITER 100
 # define PI 3.14159265358979323846
 typedef struct s_fractol
@@ -54,6 +54,6 @@ void	put_pixel(t_fractol *f, int x, int y, int colour);
 int		valid_args(int argc, char **argv);
 void	julia(t_fractol *f, char **argv);
 void	mandelbrot(t_fractol *f);
-void	fractol(char **argv);
+void	fractol(t_fractol *f, char **argv);
 
 #endif

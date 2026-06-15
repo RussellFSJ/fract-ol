@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 20:47:00 by rfoo              #+#    #+#             */
-/*   Updated: 2026/06/13 20:47:26 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/15 13:44:37 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 void handle_cleanup(t_fractol *f)
 {
+	ft_printf("cleaning\n");
 	if (f)
 	{
 		if (f->image)
 			mlx_destroy_image(f->mlx, f->image);
 		if (f->window)
 			mlx_destroy_window(f->mlx, f->window);
+		if (f->mlx)
+		{
+			mlx_destroy_display(f->mlx);
+			free(f->mlx);
+		}
 		free(f);
 	}
 }
